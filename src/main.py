@@ -153,7 +153,8 @@ def main():
         file_download_feature,
         secret,
         server_version,
-        CONFIG_FOLDER)
+        CONFIG_FOLDER,
+        WEB_FOLDER)
 
 
 if __name__ == '__main__':

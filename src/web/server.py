@@ -831,6 +831,7 @@ def init(server_config: ServerConfig,
          secret,
          server_version,
          conf_folder,
+         web_folder,
          *,
          start_server=True):
     ssl_context = None
@@ -879,7 +880,7 @@ def init(server_config: ServerConfig,
         handlers.append((r'/logout', LogoutHandler))
 
     handlers.append((r'/theme/(.*)', ThemeStaticFileHandler, {'path': os.path.join(conf_folder, 'theme')}))
-    handlers.append((r"/(.*)", AuthorizedStaticFileHandler, {"path": "web"}))
+    handlers.append((r"/(.*)", AuthorizedStaticFileHandler, {"path": web_folder}))
 
     settings = {
         'cookie_secret': secret,
